@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/ADC_main.bin"
+elf = "build/ADC_main.elf"
