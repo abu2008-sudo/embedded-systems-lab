@@ -1,6 +1,6 @@
 # Embedded Systems Lab
 
-ESP32 firmware projects built using ESP-IDF and C, developed as part of a structured 32-week embedded systems and VLSI learning roadmap targeting roles at Tesla, Waymo, Bosch, and TI.
+ESP32 firmware projects built using ESP-IDF and C
 
 ---
 
