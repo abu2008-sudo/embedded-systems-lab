@@ -9,12 +9,12 @@ ESP32 firmware projects built using ESP-IDF and C
 A 3-channel ADC monitoring system tracking power rail voltages in real time, with both
 short-term (range-based) and permanent (all-time) statistics per channel.
 
-### Channels
+### Channels (planned hardware mapping)
 | Channel | GPIO | Signal |
 |---------|------|--------|
 | CH1 | GPIO34 | VCC rail |
 | CH2 | GPIO35 | Secondary 3.3V rail |
-| CH3 | GPIO32 | Board temperature (LM35) |
+| CH3 | GPIO32 | Board temperature (LM35) — sensor-specific conversion not yet implemented |
 
 ### Architecture
 - `ADC_Channel_t` — OOP-style struct per channel, holding a circular history buffer
@@ -37,6 +37,7 @@ Firmware logic validated with a software-in-the-loop (SIL) test before hardware 
 - [x] Single-channel raw ADC read over UART
 - [x] OOP refactor — `ADC_Channel_t` struct, range-based + global min/max, flexible circular buffer
 - [x] SIL validation of stats logic (spike test)
+- [ ] LM35 temperature conversion logic (CH3 currently treated as generic ADC channel)
 - [ ] JSON UART output (deprioritized — plain UART logging in place)
 - [ ] Circuit-level simulation (LTspice)
 - [ ] Hardware-in-the-loop validation on physical ESP32
@@ -50,4 +51,4 @@ Firmware logic validated with a software-in-the-loop (SIL) test before hardware 
 ---
 
 ## Roadmap
-More projects will be added across phases covering FreeRTOS, STM32 LL drivers,
+More projects will be added across phases covering FreeRTOS, STM32 LL drivers, Verilog/FPGA, and VLSI design.
